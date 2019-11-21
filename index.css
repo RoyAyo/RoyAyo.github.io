@@ -1,0 +1,13 @@
+body,html{
+	height: 100%;
+}
+
+::placeholder{
+	color: red;
+	font-family: serif;
+	font-size:10pt;
+	text-align: center;
+}
+#map{
+	height: 60%;
+}

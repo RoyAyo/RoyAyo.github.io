@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Time Api </title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<div>
+		<input type="search" name="search" id="search" placeholder="Search">
+		<input type="button" value="Submit" id="sub">
+	</div>
+	<div id="map">
+		
+	</div>
+	<div id="time">
+		
+	</div>
+	<script type="text/javascript" src="index.js"></script>
+	<script type="text/javascript" src="">
+		var map;
+		function callback() {
+			map = new google.maps.MAP(document.getElementById('map'),{
+				center : {lat : -34.397,lng :150.644},
+				zoom : 8
+			});
+		}
+	</script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?callback=callback"
+	async defer></script>
+</body>
+</html>
