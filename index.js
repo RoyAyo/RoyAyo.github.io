@@ -11,13 +11,21 @@ document.getElementById('sub').onclick = () => {
 }
 
 async function getTimeZone(loc){
-	//const res = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${loc}&key=${gkey}`);
 	const r = await fetch(`https://api.opencagedata.com/geocode/v1/json?key=${gkey}&q=${loc}`);
 
 	const res = await r.json();
 
 	lat = res.results[0].geometry.lat;
 	lng = res.results[0].geometry.lng;
+
+	mapboxgl.accessToken = 'pk.eyJ1IjoiYXlvcm95IiwiYSI6ImNrMzk3bDNmMzBleWczaG5jYTMya2JrMDUifQ.Kqmo1lWYwAHdfb8koCzgTw';
+	var map = new mapboxgl.Map({
+		container:'map',
+		style: 'mapbox://styles/mapbox/streets-v11',
+		center : [lat,lng],
+		zoom : 5,
+	});
+
 	
 	getLocation(lat,lng).then(res => {
 		document.getElementById('time').innerHTML = res;

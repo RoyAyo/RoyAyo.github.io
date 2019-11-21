@@ -3,6 +3,8 @@
 <head>
 	<title> Time Api </title>
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<script src="https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css">
 </head>
 <body>
 	<div>
@@ -12,20 +14,17 @@
 	<div id="map">
 		
 	</div>
+	<div id="loader" style="display: none;"></div>
 	<div id="time">
 		
 	</div>
 	<script type="text/javascript" src="index.js"></script>
-	<script type="text/javascript" src="">
-		var map;
-		function callback() {
-			map = new google.maps.MAP(document.getElementById('map'),{
-				center : {lat : -34.397,lng :150.644},
-				zoom : 8
-			});
-		}
+	<script type="text/javascript">
+		mapboxgl.accessToken = 'pk.eyJ1IjoiYXlvcm95IiwiYSI6ImNrMzk3bDNmMzBleWczaG5jYTMya2JrMDUifQ.Kqmo1lWYwAHdfb8koCzgTw';
+		var map = new mapboxgl.Map({
+			container:'map',
+			style: 'mapbox://styles/mapbox/streets-v11'
+		});
 	</script>
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?callback=callback"
-	async defer></script>
 </body>
 </html>
